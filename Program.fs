@@ -69,31 +69,34 @@ let chords =
     ]
 
 //notes in C chord selection
-let cProbs = [| 'C', 2;
-           'D', 1;
-           'E', 2;
-           'F', 1;
-           'G', 3;
-           'A', 1;
-           'B', 1 |]
+let cProbs = [| "C", 2;
+           "D", 1;
+           "E", 2;
+           "F", 1;
+           "G", 3;
+           "A", 1;
+           "B", 1;
+           "z.", 1|]
 let cSums = Seq.scan (+) 0 (dict cProbs).Values |> Seq.skip 1 |> Seq.toArray 
 
-let fProbs = [| 'C', 3;
-           'D', 1;
-           'E', 1;
-           'F', 2;
-           'G', 1;
-           'A', 2;
-           'B', 1 |]
+let fProbs = [| "C", 3;
+           "D", 1;
+           "E", 1;
+           "F", 2;
+           "G", 1;
+           "A", 2;
+           "B", 1;
+           "z.", 1|]
 let fSums = Seq.scan (+) 0 (dict fProbs).Values |> Seq.skip 1 |> Seq.toArray
 
-let gProbs = [| 'C', 1;
-           'D', 3;
-           'E', 1;
-           'F', 1;
-           'G', 2;
-           'A', 1;
-           'B', 2 |]
+let gProbs = [| "C", 1;
+           "D", 3;
+           "E", 1;
+           "F", 1;
+           "G", 2;
+           "A", 1;
+           "B", 2;
+           "z.", 1|]
 let gSums = Seq.scan (+) 0 (dict gProbs).Values |> Seq.skip 1 |> Seq.toArray
 
 // let durationProbs = [| "", 3;
@@ -177,8 +180,6 @@ let rec chooseDuration (totalDuration : float) : float = // use n to change dura
     else
         chosenDuration
 
-chooseDuration 1
-
 let durationToABC (duration:float) :string =
     match duration with
     | 1.0 -> ""
@@ -256,8 +257,3 @@ printfn "%s" song
 //     |> Array.map (fun subArr -> subArr |> Array.map (fun s -> s.Replace("\"", "") |> Seq.filter (fun c -> not (c = ';' || c = '[' || c = ']')) |> String.concat " "))
 //     |> Array.map (fun subArr -> subArr |> String.concat " | ")
 //     |> String.concat " "
-
-List.concat [["A/16"; "F/4"; "F/16"; "C/2"; "A2"; "A/8"; "E"]; ["C"; "A2"; "E"];
-   ["F/16"; "G/2"; "C/8"; "D/8"; "G/16"; "G/8"; "G3"]; ["B"; "D"; "B"; "C"];
-   ["E4"]; ["D/8"; "E/4"; "G"; "E/2"; "D/16"; "E/16"; "B"; "B"];
-   ["C"; "B"; "E2"]; ["F/16"; "G/8"; "G/2"; "G"; "D2"; "D/4"; "C/16"]]

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "1099GZDyogUG5eX6uVJOpHgqLVypkXqsP+T3PrTXbd8zQCkcndz4lUVKiofMfg2Fi6PTds+lsRNrRd2MOl+whg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tssep\\genMusic\\genMusic.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tssep\\.nuget\\packages\\fsharp.core\\7.0.0\\fsharp.core.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
